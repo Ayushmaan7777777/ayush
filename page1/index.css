@@ -11,20 +11,13 @@ body, html {
 }
 
 /* Left panel: 30% width */
-.left-panel {
-  width: 30%;
-  background-color: brown;
-  color: white;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
+
 /* ...existing code... */
 /* ...existing code... */
  
 .left-panel {
   width: 30%;
-  background-color:brown;
+  background-color:#3d4665;
   color: white;
   display: flex;
   flex-direction: column;      /* Add this */
@@ -47,7 +40,7 @@ body, html {
   height: 100%;                /* Add this */
   overflow-y: auto;
   padding: 10px;
-  background: #571313;
+  background: #3d4665;
   color: #000000;
   border-radius: 8px;
   box-shadow: 0 2px 8px rgba(0,0,0,0.07);
