@@ -18,6 +18,10 @@
       <p><strong>Experience:</strong> 10 years</p>
       <p><strong>Qualifications:</strong>
   <p><strong>Charges:</strong>
+     <div class="doc-actions">
+      <button class="consult-btn">Online Consultancy</button>
+      <button class="book-btn">Book Appointment</button>
+    </div>
     </div>
     </div>
     <div class="doc-card">
@@ -28,6 +32,10 @@
       <p><strong>Experience:</strong> 8 years</p>
   <p><strong>Qualifications:</strong>
   <p><strong>Charges:</strong>
+     <div class="doc-actions">
+      <button class="consult-btn">Online Consultancy</button>
+      <button class="book-btn">Book Appointment</button>
+    </div>
     </div>
     </div>
     <div class="doc-card">
@@ -38,6 +46,10 @@
       <p><strong>Experience:</strong> 12 years</p>
     <p><strong>Qualifications:</strong>
   <p><strong>Charges:</strong>
+     <div class="doc-actions">
+      <button class="consult-btn">Online Consultancy</button>
+      <button class="book-btn">Book Appointment</button>
+    </div>
     </div>
     </div>
     <div class="doc-card">
@@ -48,6 +60,10 @@
       <p><strong>Experience:</strong> 8 years</p>
   <p><strong>Qualifications:</strong>
   <p><strong>Charges:</strong>
+     <div class="doc-actions">
+      <button class="consult-btn">Online Consultancy</button>
+      <button class="book-btn">Book Appointment</button>
+    </div>
     </div>
     </div><div class="doc-card">
       <img class="doc-photo"src="11.jpeg" alt="Doctor Image" />
@@ -57,6 +73,10 @@
       <p><strong>Experience:</strong> 8 years</p>
       <p><p><strong>Qualifications:</strong>
   <p><strong>Charges:</strong>
+     <div class="doc-actions">
+      <button class="consult-btn">Online Consultancy</button>
+      <button class="book-btn">Book Appointment</button>
+    </div>
     </div>
     </div><div class="doc-card">
       <img class="doc-photo"src="7.jpeg" alt="Doctor Image" />
@@ -66,6 +86,10 @@
       <p><strong>Experience:</strong> 8 years</p>
     <p><strong>Qualifications:</strong>
   <p><strong>Charges:</strong>
+     <div class="doc-actions">
+      <button class="consult-btn">Online Consultancy</button>
+      <button class="book-btn">Book Appointment</button>
+    </div>
     </div>
     </div><div class="doc-card">
       <img class="doc-photo"src="9.jpeg" alt="Doctor Image" />
@@ -75,6 +99,10 @@
       <p><strong>Experience:</strong> 8 years</p>
       <p><strong>Qualifications:</strong>
   <p><strong>Charges:</strong>
+     <div class="doc-actions">
+      <button class="consult-btn">Online Consultancy</button>
+      <button class="book-btn">Book Appointment</button>
+    </div>
     </div>
     </div><div class="doc-card">
       <img class="doc-photo"src="10.jpeg" alt="Doctor Image" />
@@ -84,6 +112,10 @@
       <p><strong>Experience:</strong> 8 years</p>
       <p><strong>Qualifications:</strong>
   <p><strong>Charges:</strong>
+     <div class="doc-actions">
+      <button class="consult-btn">Online Consultancy</button>
+      <button class="book-btn">Book Appointment</button>
+    </div>
       </div>
     </div><div class="doc-card">
       <img class="doc-photo"src="5.jpeg" alt="Doctor Image" />
@@ -93,6 +125,10 @@
       <p><strong>Experience:</strong> 8 years</p>
     <p><strong>Qualifications:</strong>
   <p><strong>Charges:</strong>
+     <div class="doc-actions">
+      <button class="consult-btn">Online Consultancy</button>
+      <button class="book-btn">Book Appointment</button>
+    </div>
       </div>
     </div><div class="doc-card">
       <img class="doc-photo"src="12.jpeg" alt="Doctor Image" />
@@ -102,6 +138,10 @@
       <p><strong>Experience:</strong> 8 years</p>
     <p><strong>Qualifications:</strong>
   <p><strong>Charges:</strong>
+     <div class="doc-actions">
+      <button class="consult-btn">Online Consultancy</button>
+      <button class="book-btn">Book Appointment</button>
+    </div>
       </div>
     </div><div class="doc-card">
       <img class="doc-photo"src="4.jpeg" alt="Doctor Image" />
@@ -111,6 +151,10 @@
       <p><strong>Experience:</strong> 8 years</p>
 <p><strong>Qualifications:</strong>
   <p><strong>Charges:</strong>
+     <div class="doc-actions">
+      <button class="consult-btn">Online Consultancy</button>
+      <button class="book-btn">Book Appointment</button>
+    </div>
       </div>
     </div><div class="doc-card">
       <img class="doc-photo"src="6.jpeg" alt="Doctor Image" />
@@ -120,6 +164,10 @@
       <p><strong>Experience:</strong> 8 years</p>
 <p><strong>Qualifications:</strong>
   <p><strong>Charges:</strong>
+     <div class="doc-actions">
+      <button class="consult-btn">Online Consultancy</button>
+      <button class="book-btn">Book Appointment</button>
+    </div>
     </div>
     </div>
     <!-- Add more .doc-card blocks as needed -->
@@ -134,6 +182,42 @@
       </iframe>
     </div>
   </div>
-  <script src="script.js"></script>
+  <script>
+document.addEventListener('DOMContentLoaded', function() {
+  // Create popup and overlay elements
+  const popup = document.createElement('div');
+  popup.id = 'popup-card';
+  popup.style.display = 'none';
+  popup.innerHTML = `
+    <div class="popup-content"></div>
+    <button id="close-popup">Close</button>
+  `;
+  document.body.appendChild(popup);
+
+  const overlay = document.createElement('div');
+  overlay.id = 'popup-overlay';
+  overlay.style.display = 'none';
+  document.body.appendChild(overlay);
+
+  // Add click event to each doctor card
+  document.querySelectorAll('.doc-card').forEach(card => {
+    card.style.cursor = 'pointer';
+    card.addEventListener('click', function() {
+      // Clone the card's HTML for the popup
+      popup.querySelector('.popup-content').innerHTML = card.innerHTML;
+      popup.style.display = 'block';
+      overlay.style.display = 'block';
+      document.querySelector('.container').classList.add('blurred');
+    });
+  });
+
+  // Close popup
+  document.getElementById('close-popup').onclick = function() {
+    popup.style.display = 'none';
+    overlay.style.display = 'none';
+    document.querySelector('.container').classList.remove('blurred');
+  };
+});
+</script>
 </body>
 </html>

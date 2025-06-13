@@ -1,3 +1,4 @@
+
 document.addEventListener('DOMContentLoaded', function() {
   // Create popup and overlay elements
   const popup = document.createElement('div');
@@ -31,5 +32,17 @@ document.addEventListener('DOMContentLoaded', function() {
     popup.style.display = 'none';
     overlay.style.display = 'none';
     document.querySelector('.container').classList.remove('blurred');
+  };
+});
+document.querySelectorAll('.consult-btn').forEach(btn => {
+  btn.onclick = function(e) {
+    e.stopPropagation();
+    alert('Online Consultancy clicked!');
+  };
+});
+document.querySelectorAll('.book-btn').forEach(btn => {
+  btn.onclick = function(e) {
+    e.stopPropagation();
+    alert('Book Appointment clicked!');
   };
 });
