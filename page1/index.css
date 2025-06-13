@@ -127,3 +127,23 @@ body, html {
   border-radius: 6px;
   cursor: pointer;
 }
+.doc-actions {
+  margin-top: 12px;
+  display: flex;
+  gap: 10px;
+}
+
+.consult-btn, .book-btn {
+  padding: 8px 16px;
+  border: none;
+  border-radius: 5px;
+  background: #3d4665;
+  color: #fff;
+  cursor: pointer;
+  font-size: 1em;
+  transition: background 0.2s;
+}
+
+.consult-btn:hover, .book-btn:hover {
+  background: #232845;
+}
