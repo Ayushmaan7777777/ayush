@@ -1,0 +1,125 @@
+body {
+  min-height: 100vh;
+  margin: 0;
+  font-family: 'Segoe UI', Arial, sans-serif;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, #89a180 100%);
+}
+
+.form-container {
+  background: #fff;
+  padding: 40px 32px 32px 32px;
+  border-radius: 18px;
+  box-shadow: 0 8px 32px rgba(60,70,101,0.18);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-width: 320px;
+  max-width: 95vw;
+  position: relative;
+  z-index: 1;
+}
+
+.form-container h1 {
+  color: #3d4665;
+  margin-bottom: 24px;
+  font-size: 2rem;
+  letter-spacing: 1px;
+}
+
+.input-box {
+  width: 100%;
+  padding: 12px 16px;
+  margin-bottom: 18px;
+  border: 1.5px solid #3d4665;
+  border-radius: 8px;
+  font-size: 1.1rem;
+  background: #f4f6fb;
+  color: #232845;
+  outline: none;
+  transition: border 0.2s;
+  box-sizing: border-box;
+}
+
+.input-box:focus {
+  border: 2px solid #6a82fb;
+}
+
+.submit-btn {
+  width: 100%;
+  padding: 12px 0;
+  background: linear-gradient(90deg, #3d4665 0%, #6a82fb 100%);
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  font-size: 1.1rem;
+  font-weight: bold;
+  cursor: pointer;
+  box-shadow: 0 2px 8px rgba(60,70,101,0.10);
+  transition: background 0.2s, transform 0.1s;
+  margin-top: 12px;
+}
+
+.submit-btn:hover {
+  background: linear-gradient(90deg, #6a82fb 0%, #3d4665 100%);
+  transform: translateY(-2px) scale(1.03);
+}
+
+/* Popup Styles */
+.popup-overlay {
+  position: fixed;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: rgba(60,70,101,0.25);
+  display: none;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+}
+.popup {
+  background: #fff;
+  border-radius: 18px;
+  box-shadow: 0 8px 32px rgba(60,70,101,0.18);
+  padding: 32px 24px;
+  max-width: 90vw;
+  width: 350px;
+  text-align: center;
+  animation: popupIn 0.4s;
+}
+@keyframes popupIn {
+  from { opacity: 0; transform: scale(0.8);}
+  to   { opacity: 1; transform: scale(1);}
+}
+.popup h2 {
+  color: #3d4665;
+  margin-bottom: 12px;
+}
+.popup p {
+  color: #232845;
+  margin-bottom: 20px;
+}
+.close-btn {
+  padding: 10px 28px;
+  background: linear-gradient(90deg, #3d4665 0%, #6a82fb 100%);
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+.close-btn:hover {
+  background: linear-gradient(90deg, #6a82fb 0%, #3d4665 100%);
+}
+@media (max-width: 500px) {
+  .form-container {
+    padding: 18px 4vw;
+    min-width: 90vw;
+  }
+  .popup {
+    width: 95vw;
+    padding: 18px 6vw;
+  }
+}

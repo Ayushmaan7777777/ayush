@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Doctor Booking Portal</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="form-container">
+    <h1>Book Your Doctor</h1>
+    <form id="bookingForm">
+      <input type="text" class="input-box" placeholder="Your Name" required>
+      <input type="email" class="input-box" placeholder="Your Email" required>
+      <button class="submit-btn" type="submit">Submit</button>
+    </form>
+  </div>
+
+  <!-- Popup Overlay -->
+  <div class="popup-overlay" id="popupOverlay">
+    <div class="popup">
+      <h2>Appointment Booked!</h2>
+      <p>Your appointment has been successfully booked.<br>We look forward to seeing you.</p>
+      <button class="close-btn" id="closePopup">Close</button>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
