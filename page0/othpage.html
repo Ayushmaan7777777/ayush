@@ -3,82 +3,92 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Form UI</title>
+  <title>Doctor Booking Portal</title>
   <link rel="stylesheet" href="0thpage.css" />
 </head>
 <body>
   <div class="form-container">
-    <select name ="Specialist" class="input-box">
-      <option value="">Select Specialist</option>
-      <option value="Cardiologist">Cardiologist</option>
-      <option value="Dermatologist">Dermatologist</option>
-      <option value="Neurologist">Neurologist</option>
-      <option value="Pediatrician">Pediatrician</option>
-      <option value="Psychiatrist">Psychiatrist</option>
-      <option value="Radiologist">Radiologist</option>
-      <option value="Surgeon">Surgeon</option>
-      <option value="Urologist">Urologist</option>
-      <option value="Gynecologist">Gynecologist</option>
-      <option value="Oncologist">Oncologist</option>
-      <option value="Ophthalmologist">Ophthalmologist</option>
-      <option value="Orthopedist">Orthopedist</option>
-      <option value="ENT Specialist">ENT Specialist</option>
-    </select>
+    <div class="logo-row">
+      <img src="https://img.icons8.com/ios-filled/100/3d4665/doctor-male.png" alt="Doctor Logo" class="logo">
+      <h1>Book Your Doctor</h1>
+    </div>
+    <p class="welcome-msg">Welcome! Find and book appointments with top specialists near you.</p>
+    <form>
+      <label for="search">Search Doctor or Clinic</label>
+      <input type="text" id="search" class="input-box" placeholder="e.g. Dr. Sharma, Heart Clinic">
 
-    <select name="city" class="input-box">
-      <option value="">Select City</option>
-      <option value="Mumbai">Mumbai</option>
-      <option value="Delhi">Delhi</option>
-      <option value="Bengaluru">Bengaluru</option>
-      <option value="Hyderabad">Hyderabad</option>
-      <option value="Ahmedabad">Ahmedabad</option>
-      <option value="Chennai">Chennai</option>
-      <option value="Kolkata">Kolkata</option>
-      <option value="Pune">Pune</option>
-      <option value="Jaipur">Jaipur</option>
-      <option value="Surat">Surat</option>
-      <option value="Lucknow">Lucknow</option>
-      <option value="Kanpur">Kanpur</option>
-      <option value="Nagpur">Nagpur</option>
-      <option value="Indore">Indore</option>
-      <option value="Thane">Thane</option>
-      <option value="Bhopal">Bhopal</option>
-      <option value="Visakhapatnam">Visakhapatnam</option>
-      <option value="Patna">Patna</option>
-      <option value="Vadodara">Vadodara</option>
-      <option value="Ghaziabad">Ghaziabad</option>
-      <option value="Ludhiana">Ludhiana</option>
-      <option value="Agra">Agra</option>
-      <option value="Nashik">Nashik</option>
-      <option value="Faridabad">Faridabad</option>
-      <option value="Meerut">Meerut</option>
-      <option value="Rajkot">Rajkot</option>
-      <option value="Kalyan-Dombivli">Kalyan-Dombivli</option>
-      <option value="Vasai-Virar">Vasai-Virar</option>
-      <option value="Varanasi">Varanasi</option>
-      <option value="Srinagar">Srinagar</option>
-      <option value="Aurangabad">Aurangabad</option>
-      <option value="Dhanbad">Dhanbad</option>
-      <option value="Amritsar">Amritsar</option>
-      <option value="Navi Mumbai">Navi Mumbai</option>
-      <option value="Allahabad">Allahabad</option>
-      <option value="Ranchi">Ranchi</option>
-      <option value="Howrah">Howrah</option>
-      <option value="Coimbatore">Coimbatore</option>
-      <option value="Jabalpur">Jabalpur</option>
-      <option value="Gwalior">Gwalior</option>
-      <option value="Vijayawada">Vijayawada</option>
-      <option value="Jodhpur">Jodhpur</option>
-      <option value="Madurai">Madurai</option>
-      <option value="Raipur">Raipur</option>
-      <option value="Kota">Kota</option>
-      <option value="Guwahati">Guwahati</option>
-      <option value="Chandigarh">Chandigarh</option>
-      <option value="Solapur">Solapur</option>
-      <option value="Hubli–Dharwad">Hubli–Dharwad</option>
-      <option value="Bareilly">Bareilly</option>
-    </select>
-    <button class="submit-btn" onclick="window.location.href='../page1/index.html'">SUBMIT</button>
+      <label for="specialist">Specialist</label>
+      <select name="Specialist" id="specialist" class="input-box">
+        <option value="">Select Specialist</option>
+        <option value="Cardiologist">Cardiologist</option>
+        <option value="Dermatologist">Dermatologist</option>
+        <option value="Neurologist">Neurologist</option>
+        <option value="Pediatrician">Pediatrician</option>
+        <option value="Psychiatrist">Psychiatrist</option>
+        <option value="Radiologist">Radiologist</option>
+        <option value="Surgeon">Surgeon</option>
+        <option value="Urologist">Urologist</option>
+        <option value="Gynecologist">Gynecologist</option>
+        <option value="Oncologist">Oncologist</option>
+        <option value="Ophthalmologist">Ophthalmologist</option>
+      </select>
+
+      <label for="location">Location</label>
+      <input type="text" id="location" class="input-box" placeholder="Enter your city or area">
+
+      <label for="date">Appointment Date</label>
+      <input type="date" id="date" class="input-box">
+
+      <label for="mode">Consultation Mode</label>
+      <select id="mode" class="input-box">
+        <option value="">Select Mode</option>
+        <option>Online</option>
+        <option>In-Person</option>
+      </select>
+
+      <label for="insurance">Insurance Accepted</label>
+      <select id="insurance" class="input-box">
+        <option value="">Select Insurance</option>
+        <option>None</option>
+        <option>Star Health</option>
+        <option>Max Bupa</option>
+        <option>ICICI Lombard</option>
+        <option>HDFC Ergo</option>
+      </select>
+
+      <button class="submit-btn" type="submit">Search Doctors</button>
+    </form>
+
+    <div class="featured-section">
+      <h2>Featured Doctors</h2>
+      <div class="featured-list">
+        <div class="featured-card">
+          <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Dr. Naman Bhatia" class="featured-photo">
+          <div>
+            <strong>Dr. Naman Bhatia</strong><br>
+            Cardiologist<br>
+            <span class="featured-rating">★ 4.9</span>
+          </div>
+        </div>
+        <div class="featured-card">
+          <img src="https://randomuser.me/api/portraits/women/44.jpg" alt="Dr. Sunita Shukla" class="featured-photo">
+          <div>
+            <strong>Dr. Sunita Shukla</strong><br>
+            Pediatrician<br>
+            <span class="featured-rating">★ 4.8</span>
+          </div>
+        </div>
+        <div class="featured-card">
+          <img src="https://randomuser.me/api/portraits/men/65.jpg" alt="Dr. R.K. Gupta" class="featured-photo">
+          <div>
+            <strong>Dr. R.K. Gupta</strong><br>
+            Neurologist<br>
+            <span class="featured-rating">★ 4.7</span>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
+  <script src="script.js"></script>
 </body>
 </html>
