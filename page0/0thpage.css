@@ -100,7 +100,7 @@ label {
 .submit-btn {
   width: 100%;
   padding: 12px 0;
-      background: linear-gradient(135deg, #6d995d 100%);
+     background: linear-gradient(90deg, #3d4665 0%, #6a82fb 100%);
   color: #fff;
   border: none;
   border-radius: 8px;
@@ -113,7 +113,7 @@ label {
 }
 
 .submit-btn:hover {
-   background: linear-gradient(135deg, #41752e 100%);
+     background: linear-gradient(90deg, #6a82fb 0%, #3d4665 100%);
   transform: translateY(-2px) scale(1.03);
 }
 
