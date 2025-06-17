@@ -180,25 +180,6 @@
         loading="lazy" 
         referrerpolicy="no-referrer-when-downgrade">
       </iframe> 
-      
- <button id="getLocationBtn">Get My Location</button>
-  <div id="locationResult"></div>
-
-  <script>
-    document.getElementById('getLocationBtn').onclick = function() {
-      navigator.geolocation.getCurrentPosition(
-        (position) => {
-          const lat = position.coords.latitude;
-          const lon = position.coords.longitude;
-          document.getElementById('locationResult').textContent =
-            "Latitude: " + lat + ", Longitude: " + lon;
-        },
-        (error) => {
-          document.getElementById('locationResult').textContent =
-            "Error getting location: " + error.message;
-        }
-      );
-    };
   </script>
   <script src="https://cdn.jsdelivr.net/gh/somanchiu/Keyless-Google-Maps-API@v7.0/mapsJavaScriptAPI.js"></script>
  </div>
