@@ -28,7 +28,7 @@ body {
   align-items: center;
   width: 100%;
   max-width: 800px;
-  border-sizing: border-box;
+  border-spacing: border-box;
   overflow: hidden;
 }
 

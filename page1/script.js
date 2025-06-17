@@ -25,6 +25,17 @@ document.addEventListener('DOMContentLoaded', function() {
       overlay.style.display = 'block';
       document.querySelector('.container').classList.add('blurred');
     });
+     // Prevent popup when clicking buttons inside the card
+    card.querySelectorAll('.consult-btn, .book-btn').forEach(btn => {
+      btn.addEventListener('click', function(e) {
+        e.stopPropagation();
+        if (btn.classList.contains('consult-btn')) {
+          window.location.href = '../page2/index.html'; // Replace with actual URL
+        } else if (btn.classList.contains('book-btn')) {
+         window.location.href = '../page2/index.html'; // Replace with actual URL
+        }
+      });
+    });
   });
 
   // Close popup
@@ -34,15 +45,4 @@ document.addEventListener('DOMContentLoaded', function() {
     document.querySelector('.container').classList.remove('blurred');
   };
 });
-document.querySelectorAll('.consult-btn').forEach(btn => {
-  btn.onclick = function(e) {
-    e.stopPropagation();
-    alert('Online Consultancy clicked!');
-  };
-});
-document.querySelectorAll('.book-btn').forEach(btn => {
-  btn.onclick = function(e) {
-    e.stopPropagation();
-    alert('Book Appointment clicked!');
-  };
-});
+// @ayush removed alerts
