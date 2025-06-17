@@ -1,4 +1,3 @@
-
 document.addEventListener('DOMContentLoaded', function() {
   // Create popup and overlay elements
   const popup = document.createElement('div');
@@ -18,21 +17,44 @@ document.addEventListener('DOMContentLoaded', function() {
   // Add click event to each doctor card
   document.querySelectorAll('.doc-card').forEach(card => {
     card.style.cursor = 'pointer';
-    card.addEventListener('click', function() {
+    card.addEventListener('click', function(e) {
+      // Only open popup if not clicking a button
+      if (
+        e.target.classList.contains('consult-btn') ||
+        e.target.classList.contains('book-btn')
+      ) {
+        return;
+      }
       // Clone the card's HTML for the popup
       popup.querySelector('.popup-content').innerHTML = card.innerHTML;
       popup.style.display = 'block';
       overlay.style.display = 'block';
       document.querySelector('.container').classList.add('blurred');
+
+      // Attach listeners to first two buttons in the popup
+      const popupBtns = popup.querySelectorAll('.consult-btn, .book-btn');
+      if (popupBtns[0]) {
+        popupBtns[0].addEventListener('click', function(ev) {
+          ev.stopPropagation();
+          window.location.href = '../page2/index.html';
+        });
+      }
+      if (popupBtns[1]) {
+        popupBtns[1].addEventListener('click', function(ev) {
+          ev.stopPropagation();
+          window.location.href = '../page2/index.html';
+        });
+      }
     });
-     // Prevent popup when clicking buttons inside the card
+
+    // Prevent popup when clicking buttons inside the card
     card.querySelectorAll('.consult-btn, .book-btn').forEach(btn => {
       btn.addEventListener('click', function(e) {
         e.stopPropagation();
         if (btn.classList.contains('consult-btn')) {
-          window.location.href = '../page2/index.html'; // Replace with actual URL
+          window.location.href = '../page2/index.html';
         } else if (btn.classList.contains('book-btn')) {
-         window.location.href = '../page2/index.html'; // Replace with actual URL
+          window.location.href = '../page2/index.html';
         }
       });
     });
@@ -45,4 +67,3 @@ document.addEventListener('DOMContentLoaded', function() {
     document.querySelector('.container').classList.remove('blurred');
   };
 });
-// @ayush removed alerts
