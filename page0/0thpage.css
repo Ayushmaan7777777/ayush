@@ -70,7 +70,7 @@ form {
   display: flex;
   flex-direction: column;
   gap: 10px;
-  border-sizing: border-box;
+  border-spacing: border-box;
 }
 
 label {
@@ -97,10 +97,10 @@ label {
   border: 2px solid  #3d4665;
 }
 
-.submit-btn {
+ .s {
   width: 100%;
   padding: 12px 0;
-     background: linear-gradient(90deg, #3d4665 0%, #6a82fb 100%);
+  background: linear-gradient(90deg, #3d4665 0%, #6a82fb 100%);
   color: #fff;
   border: none;
   border-radius: 8px;
@@ -112,10 +112,10 @@ label {
   margin-top: 12px;
 }
 
-.submit-btn:hover {
+.s:hover {
      background: linear-gradient(90deg, #6a82fb 0%, #3d4665 100%);
   transform: translateY(-2px) scale(1.03);
-}
+} 
 
 .featured-section {
   margin-top: 32px;
