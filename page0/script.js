@@ -25,4 +25,7 @@ document.addEventListener('DOMContentLoaded', function() {
     observer.observe(card);
   });
 });
-
+document.getElementById('bookingForm').addEventListener('submit', function(e) {
+  e.preventDefault();
+  window.location.href = 'page1\index.html'; // Adjust the path if needed
+});
