@@ -1,6 +1,6 @@
 // Update these URLs to your actual service pages
-document.getElementById('findMedicines').onclick = function() {
-  window.location.href = 'medicines.html';
+document.getElementById('finddoctor').onclick = function() {
+  window.location.href = 'page0/index.html';
 };
 document.getElementById('checkSymptoms').onclick = function() {
   window.location.href = 'symptoms.html';
