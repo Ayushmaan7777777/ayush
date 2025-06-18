@@ -4,67 +4,99 @@ body {
   font-family: 'Segoe UI', Arial, sans-serif;
   background: linear-gradient(135deg, #add97a 0%, #89a180 100%);
   display: flex;
-  align-items: center;
-  justify-content: center;
-}
-.home-container {
-  background: #fff;
-  border-radius: 20px;
-  box-shadow: 0 8px 32px rgba(60,70,101,0.18);
-  padding: 40px 24px;
-  max-width: 400px;
-  width: 95vw;
-  display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 24px;
+  justify-content: flex-start;
 }
-.home-container h1 {
+
+.main-title {
   color: #3d4665;
-  margin-bottom: 10px;
-  font-size: 2rem;
+  margin: 40px 0 24px 0;
+  font-size: 2.2rem;
   letter-spacing: 1px;
   text-align: center;
 }
-.service-btns {
-  display: flex;
-  flex-direction: box;
-  gap: 16px;
-  width: 100%;
+
+.service-grid {
+  display: grid;
+  grid-template-columns: 40vw 40vw;
+  gap: 22px;
+  width: 95vw;
+  max-width: 1496px;
+  margin-bottom: 40px;
 }
+
 .service-btn {
   display: flex;
+  flex-direction: column;
   align-items: center;
-  gap: 14px;
-  padding: 14px 18px;
+  gap: 10px;
+  padding: 22px 8px;
   border: none;
-  border-radius: 10px;
+  border-radius: 16px;
   background: linear-gradient(90deg, #6a82fb 0%, #3d4665 100%);
   color: #fff;
-  font-size: 1.1rem;
+  font-size: 1.08rem;
   font-weight: 500;
   cursor: pointer;
   box-shadow: 0 2px 8px rgba(60,70,101,0.10);
-  transition: background 0.2s, transform 0.1s;
   width: 100%;
-  justify-content: flex-start;
-}
-.service-btn:hover {
-  background: linear-gradient(90deg, #3d4665 0%, #6a82fb 100%);
-  transform: translateY(-2px) scale(1.03);
+  min-height: 120px;
+  justify-content: center;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+  opacity: 0;
+  transform: translateY(40px) scale(0.96);
+  animation: btnFadeIn 0.7s cubic-bezier(.4,2,.6,1) forwards;
 }
 .service-btn svg {
-  width: 28px;
-  height: 28px;
+  width: 36px;
+  height: 36px;
   flex-shrink: 0;
+  transition: transform 0.3s cubic-bezier(.4,2,.6,1);
 }
-@media (max-width: 500px) {
-  .home-container {
-    padding: 18px 2vw;
+.service-btn span {
+  z-index: 1;
+}
+
+.service-btn:hover {
+  background: linear-gradient(90deg, #3d4665 0%, #6a82fb 100%);
+  transform: translateY(-4px) scale(1.04);
+  box-shadow: 0 8px 24px rgba(60,70,101,0.18);
+}
+.service-btn:hover svg {
+  transform: rotate(-10deg) scale(1.15);
+}
+
+/* Staggered animation for each button */
+.service-btn:nth-child(1) { animation-delay: 0.1s; }
+.service-btn:nth-child(2) { animation-delay: 0.2s; }
+.service-btn:nth-child(3) { animation-delay: 0.3s; }
+.service-btn:nth-child(4) { animation-delay: 0.4s; }
+.service-btn:nth-child(5) { animation-delay: 0.5s; }
+.service-btn:nth-child(6) { animation-delay: 0.6s; }
+
+@keyframes btnFadeIn {
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+@media (max-width: 600px) {
+  .main-title {
+    font-size: 1.3rem;
+    margin: 24px 0 16px 0;
+  }
+  .service-grid {
+    grid-template-columns: 1fr;
+    gap: 14px;
     max-width: 98vw;
   }
   .service-btn {
     font-size: 1rem;
-    padding: 12px 10px;
+    padding: 16px 4px;
+    min-height: 80px;
   }
 }
